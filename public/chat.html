@@ -20,6 +20,7 @@
                 <div class="top-nav">
                     <button id="undo-btn">Undo</button>
                     <button id="clear-btn">Clear</button>
+                    <button id="save-btn">Save</button>
                     <input type="color" id="color-picker">
                     <input type="range" id="brush-size" min="1" max="50" value="10">
                 </div>
@@ -28,7 +29,7 @@
             <div class="chat">
                 <div class="chat-top">top</div>
                 <div id="chatLogs"></div>
-                <form class="chat-bottom" action="#">
+                <form class="chat-bottom" action="#" id="chat-bottom">
                     <div id="box" style="float:right; display:inline;">
                     <input id="msgForm" class="form-control form-control-sm" type="text" placeholder="Enter Messages" aria-label=".form-control-sm example">
                     <input type="submit" value="send" class="btn btn-success">

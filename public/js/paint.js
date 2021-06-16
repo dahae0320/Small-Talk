@@ -1,3 +1,4 @@
+var dataURL;
 var socket, canvas, ctx,
     brush = {
         x: 0,
@@ -36,24 +37,18 @@ function init () {
     ctx = canvas[0].getContext('2d');
 
     socket.on('painter', (data) => {
-        
         currentStroke = {
-                color: brush.color,
-                size: brush.size,
+                color: data.color,
+                size: data.size,
                 points: [],
         };
-
         strokes.push(currentStroke);
-
         currentStroke.points.push({
             x: data.x,
             y: data.y,
         });
-
         paint();
-       
     });
-
 
     function mouseEvent (e) {
         
@@ -67,7 +62,9 @@ function init () {
 
         data = {
             x: brush.x,
-            y: brush.y
+            y: brush.y,
+            color : brush.color,
+            size : brush.size
         }
 
         socket.emit('mouse', data);
@@ -100,6 +97,7 @@ function init () {
 
     $('#save-btn').click(function () {
         window.open(canvas[0].toDataURL());
+        // dataURL = canvas[0].toDataURL('png');
     });
 
     $('#undo-btn').click(function () {
