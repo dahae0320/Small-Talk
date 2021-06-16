@@ -46,15 +46,19 @@ io.on('connection', function(socket) {
     // io.to(id).emit('s2c chat', data);
   });
 
+  // 그림판에서 마우스가 움직이면
+  socket.on('mouse', (data) => {
+    socket.broadcast.emit('painter', data);
+  });
+
   // force client disconnect from server
   socket.on('forceDisconnect', function() {
     socket.disconnect();
   });
 
   // A disconnect event
-  socket.on('disconnect', function(data) {
-    console.log('User disconnected: ' + data.name);
-    io.emit('disconnect', data.name);
+  socket.on('disconnect', function() {
+    console.log('User disconnected: ' + socket.name);
   });
 });
 

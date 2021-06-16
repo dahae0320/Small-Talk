@@ -15,7 +15,7 @@ body {
 
 .menu{
     flex-basis: 40%;
-    box-shadow: 5px 5px 10px #C0C0C0 ;
+    box-shadow: 5px 5px 10px #C0C0C0;
 }
 .top-nav {
     display: flex;
@@ -29,6 +29,8 @@ body {
 }
 #paint {
     display: block;
+    margin:auto;
+    background-color:rgb(255, 246, 246);
 }
 
 .chat{
