@@ -52,8 +52,9 @@ io.on('connection', function(socket) {
   });
 
   // A disconnect event
-  socket.on('disconnect', function() {
-    console.log('user disconnected: ' + socket.name);
+  socket.on('disconnect', function(data) {
+    console.log('User disconnected: ' + data.name);
+    io.emit('disconnect', data.name);
   });
 });
 

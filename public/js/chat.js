@@ -20,7 +20,6 @@ $(function () {
 
     // 로그인에 성공하면(서버 연결 성공 시)
     socket.on("login", function (data) {
-        myName = data;
         $("#chatLogs").append("<div>[<strong>" + data + "</strong>님이 입장했습니다]</div>");
     });
 
@@ -41,7 +40,8 @@ $(function () {
         $msgForm.val("");
     });
 
-    socket.on("disconnedt", function (data) {
-        $("#chatLogs").append("<div><string>" + data + "</string>님이 나가셨습니다.");
+    // 작동이 안된다 ㅠㅠ
+    socket.on("disconnect", function (data) {
+        $("#chatLogs").append("<div>[<string>" + data + "</string>님이 나가셨습니다]</div>");
     });
 });

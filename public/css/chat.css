@@ -12,11 +12,25 @@ body {
     height: 70vh;
     border-radius:20px;
 }
+
 .menu{
     flex-basis: 40%;
-    box-shadow: 5px 5px;
     box-shadow: 5px 5px 10px #C0C0C0 ;
 }
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px 20px 0px 0;
+    padding-left: 10px;
+}
+.top-nav * {
+    margin: 20px 10px;
+}
+#paint {
+    display: block;
+}
+
 .chat{
     flex-basis: 50%;
     display: flex;
