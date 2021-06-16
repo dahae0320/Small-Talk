@@ -1,0 +1,18 @@
+body {
+    background-color:#d4ecae;
+}
+.container {
+    margin-top:250px;
+}
+#Small-Talk {
+    text-align: center;
+}
+#user-chat-data{
+    margin:0 auto;
+    justify-content: center;
+    display: flex;
+}
+.form-control{
+    width: 200px;
+    display: inline;
+}
